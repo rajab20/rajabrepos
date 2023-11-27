@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from .models import About, AboutPoint
 
 
@@ -11,7 +12,6 @@ class InlineAboutPointAdmin(admin.TabularInline):
 class AboutAdmin(admin.ModelAdmin):
     list_display = ['title']
     inlines = (InlineAboutPointAdmin,)
-
 
 
 #admin.site.register(AboutPoint)
