@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.contrib import messages
 
-from .models import ContactInfo, Request
 from .forms import RequestForm
+from .models import ContactInfo
 
 
 def contact(request):
@@ -13,7 +13,7 @@ def contact(request):
         form = RequestForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Your request has been received successfully, we will contact you soon')
+            messages.success(request, 'Success')
             return redirect(reverse_lazy('contact'))
 
     context = {

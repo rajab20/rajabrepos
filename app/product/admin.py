@@ -1,11 +1,20 @@
 from django.contrib import admin
 
-from .models import Category, Color, Product, ProductItem, ProductType, Size, Brand
+from .models import (
+    Brand,
+    Category,
+    Color,
+    Comment,
+    Product,
+    ProductItem,
+    ProductType,
+    Size,
+)
+
 
 class InlineSizeAdmin(admin.TabularInline):
     model = Size
     extra = 1
-
 
 
 class InlineColorAdmin(admin.TabularInline):
@@ -23,4 +32,4 @@ admin.site.register(Category)
 admin.site.register(Product)
 admin.site.register(ProductItem)
 admin.site.register(Brand)
-# admin.site.register(Size)
+admin.site.register(Comment)

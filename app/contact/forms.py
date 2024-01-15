@@ -7,25 +7,25 @@ from .models import Request
 class RequestForm(forms.ModelForm):
     full_name = forms.CharField(
         widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': _('Full name')}
+            attrs={"class": "form-control", "placeholder": _("Full name")}
         )
     )
     email = forms.EmailField(
         widget=forms.EmailInput(
-            attrs={'class': 'form-control', 'placeholder': _('Email')}
+            attrs={"class": "form-control", "placeholder": _("Email")}
         )
     )
     subject = forms.CharField(
         widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': _('Subject')}
+            attrs={"class": "form-control", "placeholder": _("Subject")}
         )
     )
     message = forms.CharField(
         widget=forms.Textarea(
-            attrs={'class': 'form-control', 'placeholder': _('Message'), "rows": 6}
+            attrs={"class": "form-control", "placeholder": _("Message"), "rows": 6}
         )
     )
 
     class Meta:
         model = Request
-        fields = ['full_name', 'email', 'subject', 'message']
+        fields = ["full_name", "email", "subject", "message"]
